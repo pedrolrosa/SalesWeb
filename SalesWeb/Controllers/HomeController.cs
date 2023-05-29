@@ -18,6 +18,14 @@ namespace SalesWeb.Controllers
             return View();
         }
 
+        public IActionResult About()
+        {
+            ViewData["Message"] = "Message from Professor";
+            ViewData["Professor"] = "Rose Gates";
+
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
