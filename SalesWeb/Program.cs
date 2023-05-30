@@ -28,7 +28,14 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseDeveloperExceptionPage();
-    SeedingService.Seed();
+    using (var scope = app.Services.CreateScope())
+    {
+        var services = scope.ServiceProvider;
+
+        var seedingService = services.GetRequiredService<SeedingService>();
+
+        seedingService.Seed();
+    }
 }
 
 app.UseHttpsRedirection();

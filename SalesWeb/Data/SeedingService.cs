@@ -13,7 +13,7 @@ namespace SalesWeb.Data
             _context = context;
         }
 
-        public static void Seed()
+        public void Seed()
         {
             if(_context.Department.Any() ||
                _context.Seller.Any() ||
